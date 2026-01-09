@@ -207,123 +207,226 @@ tailwind.config = {
 
 
 <!-- ================= NEWS PAGE ================= -->
-<div class="flex flex-col md:flex-row max-w-7xl mx-auto mt-28 gap-6 px-4">
+<div class="max-w-7xl mx-auto mt-28 px-4">
 
-  <!-- LEFT IMAGE / VIDEO (FIXED) -->
-  <div class="relative md:w-1/2 h-[75vh] rounded-xl overflow-hidden sticky top-28">
-    <img src="https://picsum.photos/800/1000"
-         class="w-full h-full object-cover" />
+  <div class="flex flex-col md:flex-row gap-8">
 
-    <!-- ACTION BUTTONS -->
-    <div class="absolute right-4 bottom-4 flex flex-col gap-4 z-10">
-      <button class="w-12 h-12 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-neon hover:text-black transition">
-        <i class="ph ph-heart"></i>
-      </button>
-
-      <!-- COMMENT TOGGLE -->
-      <button
-        id="commentToggle"
-        class="w-12 h-12 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-neon hover:text-black transition">
-        <i class="ph ph-chat-circle"></i>
-      </button>
-
-      <button class="w-12 h-12 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-neon hover:text-black transition">
-        <i class="ph ph-share-network"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- RIGHT CONTENT (SCROLLABLE) -->
-  <div class="md:w-1/2 max-h-[75vh] overflow-y-auto pr-2 scrollbar-hide">
-
-    <div class="text-gray-400 uppercase text-sm mb-2">News • Mumbai</div>
-
-    <h1 class="text-4xl font-extrabold mb-4">
-      Markets React to Global Oil Prices
-    </h1>
-
-    <div class="flex items-center gap-4 text-gray-400 text-sm mb-6">
-      <img src="https://i.pravatar.cc/40" class="w-10 h-10 rounded-full">
-      <span>By John Doe</span>
-      <span>•</span>
-      <span>2 hours ago</span>
-    </div>
-
-    <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <p>Maecenas nec odio et ante tincidunt tempus.</p>
-      <p>Donec vitae sapien ut libero venenatis faucibus.</p>
-      <p>Vestibulum purus quam, scelerisque ut, mollis sed.</p>
-      <p>Curabitur blandit mollis lacus.</p>
-    </div>
-
-    <!-- COMMENTS (HIDDEN INITIALLY) -->
+    <!-- LEFT MEDIA -->
     <div
-      id="commentsSection"
-      class="mt-10 overflow-hidden
-             max-h-0 opacity-0
-             transition-all duration-500 ease-in-out">
+      class="relative w-full md:w-1/2
+             h-[55vh] sm:h-[60vh] md:h-[75vh]
+             rounded-xl overflow-hidden
+             md:sticky md:top-28">
 
-      <h2 class="text-2xl font-bold mb-4">Comments</h2>
+      <img
+        src="https://picsum.photos/800/1000"
+        class="w-full h-full object-cover"
+        alt="News Media" />
+    </div>
 
-      <!-- ADD COMMENT -->
-      <div class="flex gap-4 mb-6">
-        <img src="https://i.pravatar.cc/41" class="w-10 h-10 rounded-full">
-        <textarea
-          placeholder="Write a comment..."
-          class="flex-1 p-3 rounded-xl border border-gray-300 resize-none"></textarea>
+    <!-- RIGHT CONTENT -->
+    <div
+      class="w-full md:w-1/2
+             md:max-h-[75vh]
+             md:overflow-y-auto
+             md:pr-3 scrollbar-hide">
+
+      <!-- META -->
+      <div class="text-gray-400 uppercase text-xs sm:text-sm mb-2">
+        News • Mumbai
       </div>
 
-      <!-- COMMENT ITEM -->
-      <div class="flex gap-4">
-        <img src="https://i.pravatar.cc/42" class="w-10 h-10 rounded-full">
-        <div>
-          <div class="flex items-center gap-2 text-sm">
-            <span class="font-semibold">Jane Doe</span>
-            <span class="text-gray-400">2h ago</span>
-          </div>
-          <p class="text-gray-700 mt-1">
-            This article is very insightful. Thanks for sharing!
-          </p>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">
+        Markets React to Global Oil Prices
+      </h1>
+
+      <!-- AUTHOR -->
+      <div class="flex items-center gap-3 text-gray-400 text-sm mb-6">
+        <img src="https://i.pravatar.cc/40" class="w-9 h-9 rounded-full">
+        <span>By John Doe</span>
+        <span>•</span>
+        <span>2 hours ago</span>
+      </div>
+
+      <!-- ARTICLE CONTENT -->
+      <div class="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Maecenas nec odio et ante tincidunt tempus.</p>
+        <p>Donec vitae sapien ut libero venenatis faucibus.</p>
+        <p>Vestibulum purus quam, scelerisque ut, mollis sed.</p>
+        <p>Curabitur blandit mollis lacus.</p>
+        <p>Nam adipiscing. Vestibulum eu odio.</p>
+      </div>
+
+<!-- ACTION BAR -->
+<div class="flex items-center gap-6 border-t mt-8 pt-4 text-gray-600">
+
+  <button class="flex items-center gap-2 hover:text-red-500 transition">
+    <i class="ph ph-heart text-xl"></i>
+    <span class="text-sm font-medium">1.2k</span>
+  </button>
+
+  <button
+    id="commentToggle"
+    class="flex items-center gap-2 hover:text-neon transition">
+    <i class="ph ph-chat-circle text-xl"></i>
+    <span class="text-sm font-medium">Comments</span>
+  </button>
+
+  <button class="flex items-center gap-2 hover:text-blue-500 transition ml-auto">
+    <i class="ph ph-share-network text-xl"></i>
+    <span class="text-sm font-medium">Share</span>
+  </button>
+</div>
+
+<!-- COMMENTS WRAPPER -->
+<div
+  id="commentsSection"
+  class="mt-10 opacity-0 translate-y-12 max-h-0 overflow-hidden
+         transition-all duration-500 ease-in-out">
+
+  <h2 class="text-xl sm:text-2xl font-bold mb-6">
+    Comments
+  </h2>
+
+  <!-- COMMENT LIST -->
+  <div id="commentList" class="space-y-6">
+
+    <div class="flex gap-3">
+      <img src="https://i.pravatar.cc/42" class="w-9 h-9 rounded-full">
+      <div>
+        <div class="flex items-center gap-2 text-xs sm:text-sm">
+          <span class="font-semibold">Jane Doe</span>
+          <span class="text-gray-400">2h ago</span>
+        </div>
+        <p class="text-gray-700 mt-1 text-sm sm:text-base">
+          This article is very insightful. Thanks for sharing!
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+<!-- ADD COMMENT (IMPROVED) -->
+<div class="mt-10 pt-6 border-t">
+
+  <div class="flex gap-3 items-start">
+
+    <!-- USER AVATAR -->
+    <img
+      src="https://i.pravatar.cc/50"
+      class="w-10 h-10 rounded-full flex-shrink-0"
+      alt="User">
+
+    <!-- EDITOR -->
+    <div class="flex-1">
+
+      <!-- INPUT -->
+      <textarea
+        id="commentInput"
+        placeholder="Add your thoughts…"
+        rows="1"
+        class="w-full resize-none rounded-xl border border-gray-300
+               px-4 py-3 text-sm sm:text-base
+               focus:outline-none focus:ring-2 focus:ring-neon
+               transition-all duration-300"></textarea>
+
+      <!-- ACTION ROW (HIDDEN INITIALLY) -->
+      <div
+        id="commentActions"
+        class="flex items-center justify-between mt-3
+               opacity-0 max-h-0 overflow-hidden
+               transition-all duration-300">
+
+        <!-- LEFT (HINT) -->
+        <span class="text-xs text-gray-400">
+          Be respectful. No spam.
+        </span>
+
+        <!-- RIGHT (BUTTONS) -->
+        <div class="flex gap-2">
+          <button
+            id="cancelComment"
+            class="px-4 py-2 rounded-lg text-sm
+                   text-gray-600 hover:bg-gray-100 transition">
+            Cancel
+          </button>
+
+          <button
+            id="postComment"
+            class="px-5 py-2 rounded-lg text-sm font-semibold
+                   bg-neon text-black hover:brightness-110 transition">
+            Post
+          </button>
         </div>
       </div>
 
     </div>
-
   </div>
 </div>
 
-<!-- ================= COMMENT TOGGLE SCRIPT ================= -->
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
 <script>
-const commentToggle = document.getElementById("commentToggle");
+const toggleBtn = document.getElementById("commentToggle");
 const comments = document.getElementById("commentsSection");
 
-let isOpen = false;
+let open = false;
 
-commentToggle.addEventListener("click", () => {
-  isOpen = !isOpen;
+toggleBtn.addEventListener("click", () => {
+  open = !open;
 
-  if (isOpen) {
-    comments.classList.remove("max-h-0", "opacity-0");
-    comments.classList.add("max-h-[1000px]", "opacity-100");
+  if (open) {
+    comments.classList.remove("opacity-0", "translate-y-12", "max-h-0");
+    comments.classList.add("opacity-100", "translate-y-0", "max-h-[3000px]");
+
+    // 🔥 SCROLL INTO VIEW (DESKTOP + MOBILE)
+    setTimeout(() => {
+      comments.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 150);
+
   } else {
-    comments.classList.add("max-h-0", "opacity-0");
-    comments.classList.remove("max-h-[1000px]", "opacity-100");
+    comments.classList.add("opacity-0", "translate-y-12", "max-h-0");
+    comments.classList.remove("opacity-100", "translate-y-0", "max-h-[3000px]");
   }
 });
+
+
+/* ================= POST NEW COMMENT ================= */
+const postBtn = document.getElementById("postComment");
+const input = document.getElementById("commentInput");
+const list = document.getElementById("commentList");
+
+postBtn.addEventListener("click", () => {
+  const text = input.value.trim();
+  if (!text) return;
+
+  const comment = document.createElement("div");
+  comment.className = "flex gap-3";
+
+  comment.innerHTML = `
+    <img src="https://i.pravatar.cc/48" class="w-9 h-9 rounded-full">
+    <div>
+      <div class="flex items-center gap-2 text-xs sm:text-sm">
+        <span class="font-semibold">You</span>
+        <span class="text-gray-400">Just now</span>
+      </div>
+      <p class="text-gray-700 mt-1 text-sm sm:text-base">
+        ${text}
+      </p>
+    </div>
+  `;
+
+  list.appendChild(comment); // 👈 stays above post box
+  input.value = "";
+});
 </script>
-
-<!-- SCROLLBAR HIDE -->
-<style>
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { scrollbar-width: none; }
-</style>
-
-
-
-
-
-
 
 
 
