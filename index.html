@@ -388,85 +388,81 @@ storyCloseBtn.addEventListener("click", e => {
 
 
 <!-- ================= IG EXPLORE GRID ================= -->
+<!-- ================= IG EXPLORE GRID (INSTAGRAM STYLE) ================= -->
 <div
   id="grid"
   class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5
-         gap-[2px] px-2 pb-24 max-w-7xl mx-auto">
+         auto-rows-[1fr]
+         gap-[2px]
+         grid-flow-dense
+         px-2 pb-24 max-w-7xl mx-auto">
 
-  <!-- CARD -->
-    <a href="newsview.html">
-  <div class="card relative aspect-square overflow-hidden"
-    data-title="Border Tensions Escalate Overnight"
-    data-category="news"
-    data-media="image"
-    data-place="Kashmir">
+  <!-- FEATURE (2x2 IMAGE) -->
+  <a href="newsview.html"
+     class="relative col-span-2 row-span-2 overflow-hidden group">
+    <img
+      src="https://picsum.photos/900?31"
+      class="absolute inset-0 w-full h-full object-cover
+             transition-transform duration-300 group-hover:scale-105">
+    <div class="absolute inset-0 bg-black/25"></div>
+  </a>
+
+  <!-- IMAGE -->
+  <a href="newsview.html" class="relative aspect-square overflow-hidden group">
     <img src="https://i.pinimg.com/474x/8e/ce/c3/8ecec3d552653011983cc17d299289b1.jpg"
-         class="absolute inset-0 w-full h-full object-cover"/>
-    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition
-                flex items-center justify-center text-sm font-medium">
-      ❤️ 2.4k
+         class="absolute inset-0 w-full h-full object-cover
+                transition-transform duration-300 group-hover:scale-105">
+  </a>
+
+  <!-- VIDEO -->
+  <a href="newsview.html" class="relative aspect-square overflow-hidden">
+    <video
+      src="https://www.w3schools.com/html/mov_bbb.mp4"
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay muted loop playsinline>
+    </video>
+
+    <!-- video icon -->
+    <div class="absolute top-2 right-2 text-white text-lg">
+      ▶
     </div>
-  </div>
-</a>
+  </a>
 
-    <a href="newsview.html">
-    <div class="card relative aspect-square overflow-hidden"
-    data-title="Markets React to Global Oil Prices"
-    data-category="news"
-    data-media="image"
-    data-place="Mumbai">
-    <img src="https://picsum.photos/600?12"
-         class="absolute inset-0 w-full h-full object-cover"/>
-  </div>
-</a>
-
-     <a href="newsview.html">
-  <div class="card relative aspect-square overflow-hidden"
-    data-title="Why AI Will Reshape Everyday Life"
-    data-category="blogs"
-    data-media="image"
-    data-place="Bengaluru">
-    <img src="https://picsum.photos/600?21"
-         class="absolute inset-0 w-full h-full object-cover"/>
-  </div>
-     </a>
-
-    <a href="newsview.html">
-  <div class="card relative aspect-square overflow-hidden"
-    data-title="Remote Work: The New Normal?"
-    data-category="blogs"
-    data-media="image"
-    data-place="Hyderabad">
+  <!-- IMAGE -->
+  <a href="newsview.html" class="relative aspect-square overflow-hidden group">
     <img src="https://picsum.photos/600?22"
-         class="absolute inset-0 w-full h-full object-cover"/>
-  </div>
-    </a>
+         class="absolute inset-0 w-full h-full object-cover
+                transition-transform duration-300 group-hover:scale-105">
+  </a>
 
-    <!-- FEATURE -->
-     <a href="newsview.html">
-  <div class="card relative aspect-square overflow-hidden col-span-2 row-span-2"
-    data-title="Union Budget 2026 Highlights"
-    data-category="releases"
-    data-media="image"
-    data-place="New Delhi">
-    <img src="https://picsum.photos/900?31"
-         class="absolute inset-0 w-full h-full object-cover"/>
-    <div class="absolute bottom-2 left-2 text-xs bg-black/60 px-2 py-1 rounded">
-      RELEASE
+  <!-- FEATURE VIDEO (2x2) -->
+  <a href="newsview.html"
+     class="relative col-span-2 row-span-2 overflow-hidden">
+    <video
+      src="https://www.w3schools.com/html/movie.mp4"
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay muted loop playsinline>
+    </video>
+
+    <div class="absolute top-2 right-2 text-white text-lg">
+      ▶
     </div>
-  </div>
-     </a>
+  </a>
 
-     <a href="newsview.html">
-  <div class="card relative aspect-square overflow-hidden"
-    data-title="New EV Policy Announced"
-    data-category="releases"
-    data-media="image"
-    data-place="Chennai">
-    <img src="https://picsum.photos/600?32"
-         class="absolute inset-0 w-full h-full object-cover"/>
-  </div>
-     </a>
+  <!-- IMAGE -->
+  <a href="newsview.html" class="relative aspect-square overflow-hidden group">
+    <img src="https://picsum.photos/600?12"
+         class="absolute inset-0 w-full h-full object-cover
+                transition-transform duration-300 group-hover:scale-105">
+  </a>
+
+  <!-- IMAGE -->
+  <a href="newsview.html" class="relative aspect-square overflow-hidden group">
+    <img src="https://picsum.photos/600?21"
+         class="absolute inset-0 w-full h-full object-cover
+                transition-transform duration-300 group-hover:scale-105">
+  </a>
+
 </div>
 
 <!-- ================= FILTER STYLE ================= -->
