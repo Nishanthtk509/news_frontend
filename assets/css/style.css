@@ -57,13 +57,12 @@
     opacity: 0.85;
   }
 
-  .filter {
-  background: rgba(39,39,42,.7);
-  color: #fff;
+ .filter {
+  background: transparent;
   font-size: 13px;
   padding: 10px 14px;
   border-radius: 9999px;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid #9ca3af; /* gray-400 */
 }
 .filter option { background: #18181b; }
 .filter:focus { border-color: #00ffe1; }
