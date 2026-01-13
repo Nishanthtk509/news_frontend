@@ -253,4 +253,187 @@ window.addEventListener("scroll", updateNavbarBg);
 updateNavbarBg();
 
 
+const signupModal = document.getElementById("signupModal");
+const signupContent = document.getElementById("signupContent");
+const signupBtn = document.getElementById("signupBtn");
+const signupError = document.getElementById("signupError");
+
+function openSignup() {
+  closeModal(); // close login modal if open
+  signupModal?.classList.remove("hidden");
+  signupModal?.classList.add("flex");
+}
+
+function closeSignup() {
+  signupModal?.classList.add("hidden");
+  signupModal?.classList.remove("flex");
+  signupError?.classList.add("hidden");
+
+  // Reset fields
+  document.getElementById("signupUsername").value = "";
+  document.getElementById("signupPassword").value = "";
+  document.getElementById("signupConfirm").value = "";
+}
+
+// Switch between login and signup modals
+function switchToLogin() {
+  closeSignup();
+  openModal();
+}
+
+// Signup button logic
+signupBtn?.addEventListener("click", () => {
+  const username = document.getElementById("signupUsername").value.trim();
+  const password = document.getElementById("signupPassword").value;
+  const confirm = document.getElementById("signupConfirm").value;
+
+  if (!username || !password || !confirm) {
+    signupError.textContent = "All fields are required.";
+    signupError.classList.remove("hidden");
+    return;
+  }
+
+  if (password !== confirm) {
+    signupError.textContent = "Passwords do not match!";
+    signupError.classList.remove("hidden");
+    return;
+  }
+
+  // ✅ Successful signup simulation using animation
+  signupError.classList.add("hidden");
+  showSignupSuccess(username); // replace alert with animation
+});
+
+
+function showSignupSuccess(username) {
+  resetAnimations(); // reuse your existing function
+  layer?.classList.remove("hidden");
+
+  textSuccess.textContent = `Account created for: ${username}`;
+  textSuccess.classList.remove("hidden");
+
+  setTimeout(() => {
+    spinner?.classList.add("hidden");
+    check?.classList.remove("hidden");
+    pulse?.classList.remove("hidden");
+
+    setTimeout(() => {
+      signupModal?.classList.add("hidden");
+      layer?.classList.add("hidden");
+      resetAnimations();
+    }, 1200);
+  }, 500);
+}
+
+function showSignupFail(message) {
+  resetAnimations();
+  layer?.classList.remove("hidden");
+
+  textFail.textContent = message;
+  textFail.classList.remove("hidden");
+
+  cross?.classList.remove("hidden");
+  pulse?.classList.add("hidden");
+
+  setTimeout(() => {
+    layer?.classList.add("hidden");
+    resetAnimations();
+  }, 1200);
+}
+
+
+/* ===============================
+   FORGOT PASSWORD MODAL
+=============================== */
+
+const forgotModal = document.getElementById("forgotModal");
+const forgotContent = document.getElementById("forgotContent");
+const forgotBtn = document.getElementById("forgotBtn");
+const forgotError = document.getElementById("forgotError");
+
+function openForgot() {
+  closeModal();       // close login modal if open
+  closeSignup();      // close signup modal if open
+  forgotModal?.classList.remove("hidden");
+  forgotModal?.classList.add("flex");
+}
+
+function closeForgot() {
+  forgotModal?.classList.add("hidden");
+  forgotModal?.classList.remove("flex");
+  forgotError?.classList.add("hidden");
+
+  // Reset field
+  document.getElementById("forgotUsername").value = "";
+}
+
+// Switch back to login
+function switchToLoginFromForgot() {
+  closeForgot();
+  openModal();
+}
+
+// Forgot password button logic
+forgotBtn?.addEventListener("click", () => {
+  const username = document.getElementById("forgotUsername").value.trim();
+
+  if (!username) {
+    forgotError.textContent = "Please enter your username or email.";
+    forgotError.classList.remove("hidden");
+    return;
+  }
+
+  // ✅ Simulate password reset success
+  forgotError.classList.add("hidden");
+  showForgotSuccess(username);
+});
+
+// Show success animation for forgot password
+function showForgotSuccess(username) {
+  resetAnimations(); // reuse existing spinner/check/pulse
+  layer?.classList.remove("hidden");
+
+  textSuccess.textContent = `Password reset link sent to: ${username}`;
+  textSuccess.classList.remove("hidden");
+
+  setTimeout(() => {
+    spinner?.classList.add("hidden");
+    check?.classList.remove("hidden");
+    pulse?.classList.remove("hidden");
+
+    setTimeout(() => {
+      forgotModal?.classList.add("hidden");
+      layer?.classList.add("hidden");
+      resetAnimations();
+    }, 1200);
+  }, 500);
+}
+
+// Show failure (optional)
+function showForgotFail(message) {
+  resetAnimations();
+  layer?.classList.remove("hidden");
+
+  textFail.textContent = message;
+  textFail.classList.remove("hidden");
+
+  cross?.classList.remove("hidden");
+  pulse?.classList.add("hidden");
+
+  setTimeout(() => {
+    layer?.classList.add("hidden");
+    resetAnimations();
+  }, 1200);
+}
+
+
+
+
+
+
+
+
+
+
+
 
