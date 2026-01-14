@@ -428,7 +428,14 @@ function showForgotFail(message) {
 
 
 
+  function toggleLike(btn) {
+    const icon = btn.querySelector("i");
 
+    icon.classList.toggle("ph-heart");
+    icon.classList.toggle("ph-fill");
+
+    btn.classList.toggle("text-red-500");
+  }
 
 
 
