@@ -38,16 +38,20 @@ applyFiltersBtn?.addEventListener('click', () => {
   closeDrawer();
 });
 
-// ---------------- NAVBAR BLUR ON SCROLL ----------------
+// NAVBAR BLUR ON SCROLL
 function updateNavbar() {
   const isDark = document.body.classList.contains("dark");
 
   if (window.scrollY > 20 && isDark) {
     // Dark theme → glass blur
-    navbar.classList.add("backdrop-blur", "bg-white/5");
+    navbar.classList.add("backdrop-blur", "bg-white/10"); // increase opacity
+  } else if (window.scrollY > 20 && !isDark) {
+    // Light theme → solid white background, no blur
+    navbar.classList.remove("backdrop-blur");
+    navbar.classList.add("bg-white");
   } else {
-    // Light theme OR top of page → clean
-    navbar.classList.remove("backdrop-blur", "bg-white/5");
+    // At top → transparent for both
+    navbar.classList.remove("backdrop-blur", "bg-white", "bg-white/10");
   }
 }
 
